@@ -14,6 +14,7 @@
                 <th>gender</th>
                 <th>NIS</th>
                 <th>Class</th>
+                <th>Extracurricular</th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +33,13 @@
                     {{ $data->nis }}
                 </td>
                 <td>{{ $data->class['name'] }}</td>
+                <td>
+                    <ul>
+                        @foreach ($data->extracurriculars as $ekskul)
+                            <li>{{ $ekskul['name'] }}</li>
+                        @endforeach
+                    </ul>
+                </td>
             </tr>
             @endforeach
         </tbody>
