@@ -8,8 +8,7 @@ class ClassController extends Controller
 {
     public function index()
     {
-        // $class = ClassRoom::all();
-        $class = ClassRoom::with('students')->get();
+        $class = ClassRoom::with('students', 'teacher')->get();
 
         return view('classroom', ['classList' => $class]);
     }

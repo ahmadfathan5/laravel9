@@ -9,10 +9,11 @@
 <table class="table">
     <thead>
         <tr>
-            <th>No.</th>
-            <th>Nama</th>
+            <th>#</th>
+            <th>Kelas</th>
             <th>Jumlah Siswa</th>
             <th>Detail Siswa</th>
+            <th>Wali Kelas</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +29,7 @@
                         @endforeach
                     </ul>
                 </td>
+                <td>{{ $data->teacher['name'] }}</td>
             </tr>
         @endforeach
     </tbody>

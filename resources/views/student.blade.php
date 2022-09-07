@@ -15,6 +15,7 @@
                 <th>NIS</th>
                 <th>Class</th>
                 <th>Extracurricular</th>
+                <th>Wali Kelas</th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +41,7 @@
                         @endforeach
                     </ul>
                 </td>
+                <td>{{ $data->class->teacher['name'] }}</td>
             </tr>
             @endforeach
         </tbody>
