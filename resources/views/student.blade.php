@@ -4,7 +4,13 @@
 @section('content')
 
 <h1>ini adalah halaman students</h1>
+
+<div class="my-5">
+    <a href="/addstudent" class="btn btn-primary">Add Data</a>
+</div>
+
 <h3>Student List</h3>
+
 <ol>
     <table class="table">
         <thead>
@@ -13,9 +19,7 @@
                 <th>Name</th>
                 <th>gender</th>
                 <th>NIS</th>
-                <th>Class</th>
-                <th>Extracurricular</th>
-                <th>Wali Kelas</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -33,15 +37,11 @@
                 <td>
                     {{ $data->nis }}
                 </td>
-                <td>{{ $data->class['name'] }}</td>
                 <td>
-                    <ul>
-                        @foreach ($data->extracurriculars as $ekskul)
-                            <li>{{ $ekskul['name'] }}</li>
-                        @endforeach
-                    </ul>
+                    <a href="/student/{{$data->id}}" class="btn btn-sm btn-outline-primary">detail</a>
+                    <a href="" class="btn btn-sm btn-outline-warning">edit</a>
+                    <a href="" class="btn btn-sm btn-outline-danger">delete</a>
                 </td>
-                <td>{{ $data->class->teacher['name'] }}</td>
             </tr>
             @endforeach
         </tbody>

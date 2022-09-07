@@ -4,6 +4,11 @@
 @section('content')
 
 <h1>ini adalah halaman Teacher</h1>
+
+<div class="my-5">
+    <a href="" class="btn btn-primary">Add Data</a>
+</div>
+
 <h3>Teacher List</h3>
 
 <table class="table">
@@ -11,8 +16,7 @@
         <tr>
             <th>#</th>
             <th>Name</th>
-            {{-- <th>Jumlah Anggota</th>
-            <th>Detail Anggota</th> --}}
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -20,14 +24,11 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $data->name }}</td>
-                {{-- <td>{{ count($data->students) }}</td>
                 <td>
-                    <ul>
-                        @foreach ($data->students as $anggota)
-                            <li>{{ $anggota['name'] }}</li>
-                        @endforeach
-                    </ul>
-                </td> --}}
+                    <a href="/teacher/{{$data->id}}">detail</a>
+                    <a href="">edit</a>
+                    <a href="">delete</a>
+                </td>
             </tr>
         @endforeach
     </tbody>
