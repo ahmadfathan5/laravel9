@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
@@ -17,5 +18,16 @@ class TeacherController extends Controller
     {
         $teacher = Teacher::with('class.students')->findOrFail($id);
         return view('teacher-detail', ['teacher' => $teacher]);
+    }
+
+    public function create()
+    {
+        return view('teacher-add');
+    }
+
+    public function store(Request $request)
+    {
+        $teacher = Teacher::create($request->all());
+        return redirect('/teacher');
     }
 }

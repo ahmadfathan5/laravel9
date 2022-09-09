@@ -6,7 +6,7 @@
 <h1>ini adalah halaman class</h1>
 
 <div class="my-5">
-    <a href="" class="btn btn-primary">Add Data</a>
+    <a href="/addclass" class="btn btn-primary">Add Data</a>
 </div>
 
 <h3>Class List</h3>
@@ -23,11 +23,11 @@
         @foreach ($classList as $data)
             <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $data->name }}</td>
+                <td>{{ $data['name'] }}</td>
                 <td>
-                    <a href="class/{{$data->id}}">detail</a>
-                    <a href="">edit</a>
-                    <a href="">delete</a>
+                    <a href="class/{{$data['id']}}" class="btn btn-sm btn-outline-primary">detail</a>
+                    <a href="/editclass/{{$data['id']}}" class="btn btn-sm btn-outline-warning">edit</a>
+                    <a href="" class="btn btn-sm btn-outline-danger">delete</a>
                 </td>
             </tr>
         @endforeach

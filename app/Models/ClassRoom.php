@@ -11,6 +11,7 @@ class ClassRoom extends Model
     use HasFactory;
 
     protected $table = 'class';
+    protected $fillable = ['name', 'teacher_id'];
 
     public function students()
     {

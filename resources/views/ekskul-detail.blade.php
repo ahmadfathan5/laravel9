@@ -3,7 +3,11 @@
 
 @section('content')
 
-<h2>ini adalah halaman detail class {{ $ekskul['name'] }}</h2>
+<h2>ini adalah halaman detail extracurricular {{ $ekskul['name'] }}</h2>
+
+<div class="col-md-6 my-5">
+    <a href="/addextracurricular" class="btn btn-primary">Add Data</a>
+</div>
 
 <div class="mt-5">
     <table class="table">

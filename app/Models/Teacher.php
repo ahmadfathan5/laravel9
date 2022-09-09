@@ -10,6 +10,8 @@ class Teacher extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     function class ()
     {
         return $this->hasOne(ClassRoom::class);

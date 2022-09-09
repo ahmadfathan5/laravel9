@@ -5,8 +5,8 @@
 
 <h1>ini adalah halaman Extracurricular</h1>
 
-<div class="my-5">
-    <a href="" class="btn btn-primary">Add Data</a>
+<div class="col-md-6 my-5">
+    <a href="/addextracurricular" class="btn btn-primary">Add Data</a>
 </div>
 
 <h3>Extracurricular List</h3>
@@ -24,7 +24,6 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $data->name }}</td>
-                <td>{{ count($data->students) }}</td>
                 <td>
                     <a href="/extracurricular/{{$data->id}}">detail</a>
                     <a href="">edit</a>

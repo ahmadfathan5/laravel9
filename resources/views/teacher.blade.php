@@ -6,7 +6,7 @@
 <h1>ini adalah halaman Teacher</h1>
 
 <div class="my-5">
-    <a href="" class="btn btn-primary">Add Data</a>
+    <a href="/addteacher" class="btn btn-primary">Add Data</a>
 </div>
 
 <h3>Teacher List</h3>

@@ -29,17 +29,17 @@
                     {{ $loop->iteration }}
                 </td>
                 <td>
-                    {{ $data->name }}
+                    {{ $data['name'] }}
                 </td>
                 <td>
-                    {{ $data->gender }}
+                    {{ $data['gender'] }}
                 </td>
                 <td>
-                    {{ $data->nis }}
+                    {{ $data['nis'] }}
                 </td>
                 <td>
-                    <a href="/student/{{$data->id}}" class="btn btn-sm btn-outline-primary">detail</a>
-                    <a href="" class="btn btn-sm btn-outline-warning">edit</a>
+                    <a href="/student/{{$data['id']}}" class="btn btn-sm btn-outline-primary">detail</a>
+                    <a href="/editstudent/{{$data['id']}}" class="btn btn-sm btn-outline-warning">edit</a>
                     <a href="" class="btn btn-sm btn-outline-danger">delete</a>
                 </td>
             </tr>
