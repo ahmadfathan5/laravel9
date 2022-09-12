@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home', [
         'name' => 'mamad',
-        'role' => 'tamu',
+        'role' => 'admin',
         'buah' => ['nanas', 'jambu', 'rujak'],
     ]);
 });
@@ -45,6 +45,9 @@ Route::get('/addextracurricular', [ExtracurricularController::class, 'create']);
 Route::post('/extracurricular-add', [ExtracurricularController::class, 'store']);
 Route::get('/editextracurricular/{id}', [ExtracurricularController::class, 'edit']);
 Route::put('/extracurricular-add/{id}', [ExtracurricularController::class, 'update']);
+
+Route::get('/addanggota', [ExtracurricularController::class, 'createanggota']);
+Route::post('/anggota-add', [ExtracurricularController::class, 'storeanggota']);
 
 Route::get('/teacher', [TeacherController::class, 'index']);
 Route::get('/teacher/{id}', [TeacherController::class, 'show']);

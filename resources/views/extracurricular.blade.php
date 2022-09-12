@@ -7,6 +7,7 @@
 
 <div class="col-md-6 my-5">
     <a href="/addextracurricular" class="btn btn-primary">Add Data</a>
+    <a href="/addanggota" class="btn btn-primary mx-2">Add Anggota</a>
 </div>
 
 <h3>Extracurricular List</h3>
