@@ -27,17 +27,30 @@ class ExtracurricularController extends Controller
         return view('ekskul-add');
     }
 
+    public function store(Request $request)
+    {
+        $ekskul = Extracurricular::create($request->all());
+        return redirect('/extracurricular');
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $ekskul = Extracurricular::findOrFail($id);
+        return view('ekskul-edit', ['ekskul' => $ekskul]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $ekskul = Extracurricular::findOrFail($id);
+        $ekskul->update($request->all());
+        return redirect('/extracurricular');
+    }
+
     public function createanggota()
     {
         $ekskul = Extracurricular::get(['id', 'name']);
         $student = Student::get(['id', 'name']);
         return view('add-anggota', ['ekskul' => $ekskul, 'student' => $student]);
-    }
-
-    public function store(Request $request)
-    {
-        $ekskul = Extracurricular::create($request->all());
-        return redirect('/extracurricular');
     }
 
     public function storeanggota(Request $request)
@@ -48,5 +61,10 @@ class ExtracurricularController extends Controller
             'extracurricular_id' => $request->extracurricular_id,
         ]);
         return redirect('/extracurricular');
+    }
+
+    public function editanggota(Request $request, $id)
+    {
+        return view('edit-anggota');
     }
 }

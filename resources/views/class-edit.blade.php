@@ -3,7 +3,7 @@
 
 @section('content')
 
-<h2>ini adalah halaman untuk menambahkan data class</h2>
+<h2>ini adalah halaman untuk mengedit data class {{$class['name']}}</h2>
 
 <div class="mt-5 col-8 m-auto">
     <form action="/class-edit/{{$class['id']}}" method="post">

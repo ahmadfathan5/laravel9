@@ -26,9 +26,9 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $data->name }}</td>
                 <td>
-                    <a href="/extracurricular/{{$data->id}}">detail</a>
-                    <a href="">edit</a>
-                    <a href="">delete</a>
+                    <a href="/extracurricular/{{$data->id}}" class="btn btn-sm btn-outline-primary">detail</a>
+                    <a href="/editextracurricular/{{$data->id}}" class="btn btn-sm btn-outline-warning">edit</a>
+                    <a href="" class="btn btn-sm btn-outline-danger">delete</a>
                 </td>
             </tr>
         @endforeach

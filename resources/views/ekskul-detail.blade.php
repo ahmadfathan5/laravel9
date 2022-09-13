@@ -6,7 +6,7 @@
 <h2>ini adalah halaman detail extracurricular {{ $ekskul['name'] }}</h2>
 
 <div class="col-md-6 my-5">
-    <a href="/addextracurricular" class="btn btn-primary">Add Data</a>
+    <a href="/editanggota/{{ $ekskul['id'] }}" class="btn btn-primary">Add Data</a>
 </div>
 
 <div class="mt-5">

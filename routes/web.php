@@ -48,6 +48,8 @@ Route::put('/extracurricular-add/{id}', [ExtracurricularController::class, 'upda
 
 Route::get('/addanggota', [ExtracurricularController::class, 'createanggota']);
 Route::post('/anggota-add', [ExtracurricularController::class, 'storeanggota']);
+Route::get('/editanggota/{id}', [ExtracurricularController::class, 'editanggota']);
+Route::put('/anggota-edit/{id}', [ExtracurricularController::class, 'updateanggota']);
 
 Route::get('/teacher', [TeacherController::class, 'index']);
 Route::get('/teacher/{id}', [TeacherController::class, 'show']);
