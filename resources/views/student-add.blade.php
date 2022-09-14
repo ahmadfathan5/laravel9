@@ -7,7 +7,7 @@
 
 <div class="mt-5 col-8 m-auto">
     @if ($errors->any())
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-warning" role="alert">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>
