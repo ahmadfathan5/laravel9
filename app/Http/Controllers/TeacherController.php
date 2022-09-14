@@ -28,6 +28,12 @@ class TeacherController extends Controller
     public function store(Request $request)
     {
         $teacher = Teacher::create($request->all());
+
+        if ($teacher) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Data berhasil ditambahkan');
+        }
+
         return redirect('/teacher');
     }
 

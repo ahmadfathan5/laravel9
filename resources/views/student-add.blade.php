@@ -6,6 +6,17 @@
 <h2>ini adalah halaman untuk menambahkan data student</h2>
 
 <div class="mt-5 col-8 m-auto">
+    @if ($errors->any())
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>
+                    {{$error}}
+                </li>  
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <form action="student" method="post">
         @csrf
         <div class="mb-3">

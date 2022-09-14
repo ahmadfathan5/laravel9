@@ -30,6 +30,12 @@ class ExtracurricularController extends Controller
     public function store(Request $request)
     {
         $ekskul = Extracurricular::create($request->all());
+
+        if ($ekskul) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Data berhasil ditambahkan');
+        }
+
         return redirect('/extracurricular');
     }
 
@@ -60,6 +66,12 @@ class ExtracurricularController extends Controller
             'student_id' => $request->student_id,
             'extracurricular_id' => $request->extracurricular_id,
         ]);
+
+        if ($exstudent) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Anggota berhasil ditambahkan');
+        }
+
         return redirect('/extracurricular');
     }
 

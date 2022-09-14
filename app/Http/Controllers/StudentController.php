@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StudentCreateRequest;
 use App\Models\ClassRoom;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
 {
@@ -27,9 +29,14 @@ class StudentController extends Controller
         return view('student-add', ['class' => $class]);
     }
 
-    public function store(Request $request)
+    public function store(StudentCreateRequest $request)
     {
         $student = Student::create($request->all());
+
+        if ($student) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Data berhasil ditambahkan');
+        }
 
         return redirect('/students');
     }

@@ -5,6 +5,12 @@
 
 <h1>ini adalah halaman Extracurricular</h1>
 
+@if (Session::has('status'))
+<div class="alert alert-success" role="alert">
+    {{Session::get('message')}}
+</div>
+@endif
+
 <div class="col-md-6 my-5">
     <a href="/addextracurricular" class="btn btn-primary">Add Data</a>
     <a href="/addanggota" class="btn btn-primary mx-2">Add Anggota</a>

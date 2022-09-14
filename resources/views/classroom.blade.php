@@ -5,6 +5,12 @@
 
 <h1>ini adalah halaman class</h1>
 
+@if (Session::has('status'))
+<div class="alert alert-success" role="alert">
+    {{Session::get('message')}}
+</div>
+@endif
+
 <div class="my-5">
     <a href="/addclass" class="btn btn-primary">Add Data</a>
 </div>

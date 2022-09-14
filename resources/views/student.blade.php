@@ -3,7 +3,14 @@
 
 @section('content')
 
+
 <h1>ini adalah halaman students</h1>
+
+@if (Session::has('status'))
+<div class="alert alert-success" role="alert">
+    {{Session::get('message')}}
+</div>
+@endif
 
 <div class="my-5">
     <a href="/addstudent" class="btn btn-primary">Add Data</a>

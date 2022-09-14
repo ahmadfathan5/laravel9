@@ -30,6 +30,12 @@ class ClassController extends Controller
     public function store(Request $request)
     {
         $class = ClassRoom::create($request->all());
+
+        if ($class) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Data berhasil ditambahkan');
+        }
+
         return redirect('/class');
     }
 
