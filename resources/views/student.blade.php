@@ -19,7 +19,18 @@
 
 <h3>Student List</h3>
 
-<ol>
+<div class="mt-5">
+    <div class="my-5">
+        <form action="" method="get">
+            <div class="input-group mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="keyword" placeholder="Keyword">
+                    <label for="floatingInputGroup1">Search</label>
+                </div>
+                <button class="input-group-text btn btn-danger">Search</button>
+            </div>
+        </form>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -27,6 +38,7 @@
                 <th>Name</th>
                 <th>gender</th>
                 <th>NIS</th>
+                <th>Class</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -46,6 +58,9 @@
                     {{ $data['nis'] }}
                 </td>
                 <td>
+                    {{ $data->class['name'] }}
+                </td>
+                <td>
                     <a href="/student/{{$data['id']}}" class="btn btn-sm btn-outline-primary">detail</a>
                     <a href="/editstudent/{{$data['id']}}" class="btn btn-sm btn-outline-warning">edit</a>
                     <a href="/deletestudent/{{$data['id']}}" class="btn btn-sm btn-outline-danger">delete</a>
@@ -54,6 +69,11 @@
             @endforeach
         </tbody>
     </table>
-</ol>
+    <div class="my-5">
+        {{$studentList->withQueryString()->links()}}
+    </div>
+</div>
+
+
 
 @endsection
