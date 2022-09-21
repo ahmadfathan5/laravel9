@@ -33,6 +33,8 @@ Route::get('/editstudent/{id}', [StudentController::class, 'edit']);
 Route::put('/student-edit/{id}', [StudentController::class, 'update']);
 Route::get('/deletestudent/{id}', [StudentController::class, 'delete']);
 Route::delete('/student-remove/{id}', [StudentController::class, 'remove']);
+Route::get('/student-restore', [StudentController::class, 'restoreStudent']);
+Route::get('/student/{id}/restore', [StudentController::class, 'restore']);
 
 //class
 Route::get('/class', [ClassController::class, 'index']);

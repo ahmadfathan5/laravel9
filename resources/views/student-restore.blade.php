@@ -4,22 +4,16 @@
 @section('content')
 
 
-<h1>ini adalah halaman students</h1>
+<h1>ini adalah halaman students yang terhapus</h1>
 
-@if (Session::has('status'))
-<div class="alert alert-success" role="alert">
-    {{Session::get('message')}}
-</div>
-@endif
-
-<div class="my-5 d-flex justify-content-between">
-    <a href="/addstudent" class="btn btn-primary">Add Data</a>
-    <a href="/student-restore" class="btn btn-secondary">Restore Data</a>
+<div class="my-5 ">
+    <a href="/students" class="btn btn-primary">back</a>
+    
 </div>
 
 <h3>Student List</h3>
 
-<ol>
+<div class="mt-5">
     <table class="table">
         <thead>
             <tr>
@@ -31,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($studentList as $data)
+            @foreach ($student as $data)
             <tr>
                 <td>
                     {{ $loop->iteration }}
@@ -46,14 +40,13 @@
                     {{ $data['nis'] }}
                 </td>
                 <td>
-                    <a href="/student/{{$data['id']}}" class="btn btn-sm btn-outline-primary">detail</a>
-                    <a href="/editstudent/{{$data['id']}}" class="btn btn-sm btn-outline-warning">edit</a>
-                    <a href="/deletestudent/{{$data['id']}}" class="btn btn-sm btn-outline-danger">delete</a>
+                    <a href="/student/{{$data['id']}}/restore" class="btn btn-sm btn-outline-primary">restore</a>
+                    {{-- <a href="/deletestudent/{{$data['id']}}" class="btn btn-sm btn-outline-danger">delete</a> --}}
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-</ol>
+</div>
 
 @endsection
