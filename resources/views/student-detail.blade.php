@@ -5,6 +5,14 @@
 
 <h2>ini adalah halaman detail students {{ $student['name'] }}</h2>
 
+<div class="my-3 d-flex justify-content-center">
+    @if ($student['image'] != '')
+        <img src="{{asset('storage/profil/'.$student['image'])}}" alt="" width="200px">
+    @else
+        <img src="{{asset('/images/defult.png')}}" alt="" width="200px">
+    @endif
+</div>
+
 <div class="mt-5">
     <table class="table">
         <tr>

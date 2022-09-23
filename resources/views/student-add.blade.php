@@ -10,14 +10,14 @@
     <div class="alert alert-warning" role="alert">
         <ul>
             @foreach ($errors->all() as $error)
-                <li>
-                    {{$error}}
-                </li>  
+            <li>
+                {{$error}}
+            </li>
             @endforeach
         </ul>
     </div>
     @endif
-    <form action="student" method="post">
+    <form action="student" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name">Nama</label>
@@ -40,9 +40,13 @@
             <select name="class_id" id="class" class="form-control">
                 <option value="">Pilih Kelas</option>
                 @foreach ($class as $item)
-                    <option value="{{$item->id}}">{{ $item->name }}</option>
+                <option value="{{$item->id}}">{{ $item->name }}</option>
                 @endforeach
             </select>
+        </div>
+        <div class="mb-3">
+            <label for="photo">upload photo</label>
+            <input type="file" class="form-control" id="photo" name="photo">
         </div>
         <div class="mb-3 d-grid gap-2 d-md-block">
             <button class="btn btn-success">Save</button>

@@ -12,7 +12,7 @@ class Student extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'gender', 'nis', 'class_id'];
+    protected $fillable = ['name', 'gender', 'nis', 'class_id', 'image'];
 
     function class ()
     {

@@ -40,6 +40,14 @@ class StudentController extends Controller
 
     public function store(StudentCreateRequest $request)
     {
+        $newName = '';
+
+        if ($request->file('photo')) {
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $newName = $request->name . '-' . now()->timestamp . '.' . $extension;
+            $request->file('photo')->storeAs('profil', $newName);
+        }
+        $request['image'] = $newName;
         $student = Student::create($request->all());
 
         if ($student) {
