@@ -12,10 +12,12 @@
 </div>
 @endif
 
+@if (Auth::user()->role_id == 1 || Auth::user()->role_id == 2 )
 <div class="my-5 d-flex justify-content-between">
     <a href="/addstudent" class="btn btn-primary">Add Data</a>
-    <a href="/student-restore" class="btn btn-secondary">Restore Data</a>
+    <a href="/student-restore" class="btn btn-success">Restore Data</a>
 </div>
+@endif
 
 <h3>Student List</h3>
 
@@ -27,7 +29,7 @@
                     <input type="text" class="form-control" name="keyword" placeholder="Keyword">
                     <label for="floatingInputGroup1">Search</label>
                 </div>
-                <button class="input-group-text btn btn-danger">Search</button>
+                <button class="input-group-text btn btn-primary">Search</button>
             </div>
         </form>
     </div>
@@ -60,11 +62,19 @@
                 <td>
                     {{ $data->class['name'] }}
                 </td>
+                
                 <td>
-                    <a href="/student/{{$data['id']}}" class="btn btn-sm btn-outline-primary">detail</a>
-                    <a href="/editstudent/{{$data['id']}}" class="btn btn-sm btn-outline-warning">edit</a>
-                    <a href="/deletestudent/{{$data['id']}}" class="btn btn-sm btn-outline-danger">delete</a>
-                </td>
+                    @if (Auth::user()->role_id != 1 && Auth::user()->role_id != 2 )
+                        <a href="#" class="btn btn-sm btn-outline-primary disabled">no action</a>
+                    @else
+                        <a href="/student/{{$data['id']}}" class="btn btn-sm btn-outline-primary">detail</a>
+                        <a href="/editstudent/{{$data['id']}}" class="btn btn-sm btn-outline-warning">edit</a>
+                    @endif
+
+                    @if (Auth::user()->role_id == 1 )
+                        <a href="/deletestudent/{{$data['id']}}" class="btn btn-sm btn-outline-danger">delete</a>
+                    @endif
+                    </td>
             </tr>
             @endforeach
         </tbody>
